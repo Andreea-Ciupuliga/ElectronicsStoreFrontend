@@ -1,0 +1,22 @@
+<p>create-product works!</p>
+
+<div>
+  <p>Reactive Form Group</p>
+
+  <form [formGroup]="registrationForm">
+
+    <input formControlName="name" placeholder="name" type="text">
+    <input formControlName="price" placeholder="price" type="number">
+    <input formControlName="description" placeholder="description" type="text">
+    <input formControlName="photoLink" placeholder="photoLink" type="text">
+    <input formControlName="categoryId" placeholder="categoryId" type="text">
+
+  </form>
+
+  <div>
+    <button mat-button (click)="submit()">Submit</button>
+  </div>
+
+
+
+</div>
