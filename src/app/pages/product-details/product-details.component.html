@@ -1,0 +1,24 @@
+<html>
+<body>
+<mat-card class="product-details">
+
+
+  <mat-card-content>
+    <img src="{{product.photoLink}}" alt="Photo">
+    <p>
+      {{product.name}} <br>
+      {{product.description}} <br>
+      <br>
+      {{product.price}} lei <br>
+
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button>Adauga in cos</button>
+    <button mat-raised-button (click)="deleteProduct(product.id)">Sterge produs</button> <!--butonul asta ar trebui sa fie vizibil doar pt admin-->
+  </mat-card-actions>
+
+</mat-card>
+</body>
+</html>
