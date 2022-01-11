@@ -1,0 +1,11 @@
+<p>delete-product works!</p>
+
+<mat-form-field class="example-form-field" appearance="fill">
+
+  <input matInput type="text" [(ngModel)]="productId">
+  <button *ngIf="productId" matSuffix mat-icon-button aria-label="Clear" (click)="productId=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<button mat-raised-button (click)="deleteProduct(productId)">Sterge produs</button> <!--butonul asta ar trebui sa fie vizibil doar pt admin-->
