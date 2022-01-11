@@ -1,0 +1,18 @@
+<div>
+  <p>Reactive Form Group</p>
+
+  <form [formGroup]="registrationForm">
+
+    <input formControlName="userName" placeholder="Username" type="text">
+    <input formControlName="email" placeholder="email" type="text">
+    <input formControlName="password" placeholder="password" type="password">
+
+  </form>
+
+  <div>
+    <button mat-button (click)="checkForm()">Submit</button>
+  </div>
+
+
+
+</div>
