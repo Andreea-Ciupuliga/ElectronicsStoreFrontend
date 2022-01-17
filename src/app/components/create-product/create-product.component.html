@@ -1,8 +1,8 @@
-<p>create-product works!</p>
 
 <div>
-  <p>Reactive Form Group</p>
+  <mat-card>
 
+  <p>Register product</p>
   <form [formGroup]="registrationForm">
 
     <input formControlName="name" placeholder="name" type="text">
@@ -14,9 +14,10 @@
   </form>
 
   <div>
-    <button mat-button (click)="submit()">Submit</button>
+    <button mat-raised-button (click)="submit()">Submit</button>
   </div>
 
-
+  </mat-card>
 
 </div>
+<router-outlet></router-outlet>

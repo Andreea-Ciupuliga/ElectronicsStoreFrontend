@@ -48,12 +48,11 @@ export class CreateProductComponent implements OnInit {
   submit():void{
 
     let productRegisterDto = this.registrationForm.value;
-
+    this.registrationForm.reset();
     this.productService.createProduct(productRegisterDto).subscribe((data: any) => {
       this.Products=data;
     });
 
-    //this.httpClient.post(`https://localhost:5001/api/Product/create`,newProduct).subscribe( (data : any) =>{this.Products = data});
 
   }
 
