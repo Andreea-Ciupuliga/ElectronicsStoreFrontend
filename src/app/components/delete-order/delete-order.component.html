@@ -1,0 +1,14 @@
+<mat-card>
+  <p>Write the order id</p>
+  <mat-form-field class="example-form-field" appearance="fill">
+
+    <input matInput type="text" [(ngModel)]="orderId">
+    <button *ngIf="orderId" matSuffix mat-icon-button aria-label="Clear" (click)="orderId=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button mat-raised-button (click)="deleteOrder(orderId)">Delete Order</button> <!--butonul asta ar trebui sa fie vizibil doar pt admin-->
+</mat-card>
+<br>
+<router-outlet></router-outlet>
