@@ -1,0 +1,14 @@
+<mat-card>
+  <p>Write the user id</p>
+  <mat-form-field class="example-form-field" appearance="fill">
+
+    <input matInput type="text" [(ngModel)]="userId">
+    <button *ngIf="userId" matSuffix mat-icon-button aria-label="Clear" (click)="userId=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button mat-raised-button (click)="deleteUser(userId)">Delete user</button> <!--butonul asta ar trebui sa fie vizibil doar pt admin-->
+</mat-card>
+<br>
+<router-outlet></router-outlet>
