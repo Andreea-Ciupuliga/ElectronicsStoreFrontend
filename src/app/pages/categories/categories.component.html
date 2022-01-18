@@ -1,0 +1,35 @@
+
+<!--ca pagina home doar ca aici sunt doar produsele dintr-o categorie specifica, spe deosebire de home
+unde sunt toate produsele din baza de date-->
+<app-toolbar></app-toolbar>
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let product of Products">
+
+
+      <mat-card class="example-card">
+
+        <mat-card-content>
+          <img mat-card-image src="{{product.photoLink}}" alt="Photo">
+          <p>
+            {{product.name}} <br>
+            <br>
+            {{product.price}} lei <br>
+            <!-- Product description is : {{product.description}} <br>-->
+          </p>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-raised-button>Adauga in cos</button>
+          <button mat-raised-button routerLink="/productDetails/{{product.id}}">Vezi produs</button>
+        </mat-card-actions>
+
+      </mat-card>
+
+    </div>
+
+
+  </div>
+</div>
+<router-outlet></router-outlet>
