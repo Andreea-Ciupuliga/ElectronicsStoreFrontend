@@ -1,6 +1,6 @@
 
 <mat-card>
-  <p>Introdu id ul produsului</p>
+  <p>Write the product id</p>
 <mat-form-field class="example-form-field" appearance="fill">
 
   <input matInput type="text" [(ngModel)]="productId">
@@ -9,7 +9,7 @@
   </button>
 </mat-form-field>
 
-<button mat-raised-button (click)="deleteProduct(productId)">Sterge produs</button> <!--butonul asta ar trebui sa fie vizibil doar pt admin-->
+<button mat-raised-button (click)="deleteProduct(productId)">Delete product</button> <!--butonul asta ar trebui sa fie vizibil doar pt admin-->
 </mat-card>
-
+<br>
 <router-outlet></router-outlet>
