@@ -1,0 +1,43 @@
+<app-toolbar></app-toolbar>
+<html>
+<body>
+<mat-card class="product-details">
+
+
+  <mat-card-content>
+    <img src="{{product.photoLink}}" alt="Photo">
+    <p>
+      {{product.name}} <br>
+      {{product.description}} <br>
+      <br>
+      {{product.price}} lei <br>
+
+    </p>
+<!--    <button mat-raised-button >Place order</button>-->
+
+    <form [formGroup]="registrationForm">
+
+      <input formControlName="userId" placeholder="userId" type="text">
+      <br>
+      <br>
+      <input formControlName="City" placeholder="City" type="text">
+      <input formControlName="Street" placeholder="Street" type="text">
+      <input formControlName="Number" placeholder="Number" type="text">
+      <input formControlName="ZIPCode" placeholder="ZIPCode" type="text">
+
+    </form>
+
+    <div>
+      <button mat-raised-button (click)="submit()">Submit order</button>
+    </div>
+
+  </mat-card-content>
+
+
+
+
+</mat-card>
+</body>
+</html>
+<router-outlet></router-outlet>
+
