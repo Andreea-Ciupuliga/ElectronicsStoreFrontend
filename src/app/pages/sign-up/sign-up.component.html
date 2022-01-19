@@ -1,18 +1,23 @@
+<app-toolbar></app-toolbar>
 <div>
-  <p>Reactive Form Group</p>
+  <mat-card>
+  <p>Sign up</p>
 
   <form [formGroup]="registrationForm">
 
-    <input formControlName="userName" placeholder="Username" type="text">
-    <input formControlName="email" placeholder="email" type="text">
-    <input formControlName="password" placeholder="password" type="password">
+    <input formControlName="FirstName" placeholder="FirstName" type="text">
+    <input formControlName="LastName" placeholder="LastName" type="text">
+    <input formControlName="Email" placeholder="Email" type="text">
+    <input formControlName="Username" placeholder="Username" type="text">
+    <input formControlName="PasswordHash" placeholder="PasswordHash" type="password">
 
   </form>
 
   <div>
-    <button mat-button (click)="checkForm()">Submit</button>
+    <button mat-button (click)="submit()">Submit</button>
   </div>
 
-
+  </mat-card>
 
 </div>
+<router-outlet></router-outlet>

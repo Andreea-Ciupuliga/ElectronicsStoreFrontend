@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ValidationErrors, Validators} from "@angular/forms";
+import {UserRegisterDTO} from "../../data/DTOs/user-register-dto";
+import {ProductService} from "../../core/services/ProductService/product.service";
+import {HttpClient} from "@angular/common/http";
+import {UserService} from "../../core/services/UserService/user.service";
+
+
 
 @Component({
   selector: 'app-sign-up',
@@ -8,38 +14,34 @@ import {FormBuilder, FormControl, FormGroup, ValidationErrors, Validators} from 
 })
 export class SignUpComponent implements OnInit {
 
+  public user: UserRegisterDTO = {FirstName: "", LastName: "", Email: "",Username:"",PasswordHash:""};
+  public users:UserRegisterDTO[]=[];
+
   registrationForm = this.fb.group({
     //scriem proprietatile pe care o sa le folosim
 
-    userName: ['', Validators.required],
-    password: ['', Validators.required],
-    email: ['', Validators.email],
-
-    // address: new FormGroup({
-    //   street: new FormControl(''),
-    //   city: new FormControl(''),
-    //   state: new FormControl(''),
-    //   zip: new FormControl('')
-    // })
+    FirstName: ['', Validators.required],
+    LastName: ['', Validators.required],
+    Email: ['', Validators.email],
+    Username: ['', Validators.required],
+    PasswordHash: ['', Validators.required],
 
   })
 
-  value ='3';
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private readonly userService: UserService, private readonly httpClient : HttpClient) { }
 
   ngOnInit(): void {
   }
-  checkForm() {
-    this.getFormValidationErrors(['userName', 'email'])
-    console.log(this.registrationForm.value)
-  }
 
-  getFormValidationErrors(keys: any) {
-    keys.forEach((key: any) => {
-      const controlErrors = this.registrationForm.get(key)?.errors;
-      if (controlErrors !== null)
-        console.error(controlErrors);
+  submit():void{
+
+    let userRegisterDto = this.registrationForm.value;
+    this.registrationForm.reset();
+    this.userService.createUser(userRegisterDto).subscribe((data: any) => {
+      this.users=data;
     });
+
+
   }
 
 }
