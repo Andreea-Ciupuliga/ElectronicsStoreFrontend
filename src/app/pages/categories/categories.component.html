@@ -1,4 +1,3 @@
-
 <!--ca pagina home doar ca aici sunt doar produsele dintr-o categorie specifica, spe deosebire de home
 unde sunt toate produsele din baza de date-->
 <app-toolbar></app-toolbar>
@@ -21,8 +20,8 @@ unde sunt toate produsele din baza de date-->
         </mat-card-content>
 
         <mat-card-actions>
-          <button mat-raised-button>Adauga in cos</button>
-          <button mat-raised-button routerLink="/productDetails/{{product.id}}">Vezi produs</button>
+          <button mat-raised-button routerLink="/createOrder/{{product.id}}">Create order</button>
+          <button mat-raised-button routerLink="/productDetails/{{product.id}}">See details</button>
         </mat-card-actions>
 
       </mat-card>
