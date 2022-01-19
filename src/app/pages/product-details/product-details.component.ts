@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../../core/services/ProductService/product.service";
 import {Product} from "../../data/interfaces/product";
 import {ActivatedRoute} from "@angular/router";
+import {ProductRespondDTO} from "../../data/DTOs/product-respond-dto";
 
 @Component({
   selector: 'app-product-details',
@@ -10,7 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ProductDetailsComponent implements OnInit {
 
-  public product: Product = {id: "", name: "", price: 0, description: "", photoLink: ""};
+  public product: ProductRespondDTO = {id: "", name: "", price: 0, description: "", photoLink: "",categoryId:""};
 
   constructor(private readonly productService: ProductService, private route: ActivatedRoute) {
   }
