@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Product} from "../../data/interfaces/product";
 import {ProductService} from "../../core/services/ProductService/product.service";
 import {ProductRespondDTO} from "../../data/DTOs/product-respond-dto";
@@ -10,11 +10,16 @@ import {ProductRespondDTO} from "../../data/DTOs/product-respond-dto";
 })
 export class DeleteProductComponent implements OnInit {
 
-  constructor(private readonly productService: ProductService) { }
-  public productId="";
+  constructor(private readonly productService: ProductService) {
+  }
+
+  public productId = "";
+
   ngOnInit(): void {
   }
+
   deleteProduct(id: string) {
+    this.productId = "";
     this.productService.deleteById(id).subscribe((data: Product) => {
       console.log(data)
     });

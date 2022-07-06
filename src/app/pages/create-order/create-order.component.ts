@@ -49,7 +49,7 @@ export class CreateOrderComponent implements OnInit {
 
     orderRegisterDto.totalPrice=this.product.price;
     orderRegisterDto.productId=this.product.id;
-
+    this.registrationForm.reset();
     console.log(orderRegisterDto)
 
     this.orderService.createOrder(orderRegisterDto).subscribe((data: any) => {
